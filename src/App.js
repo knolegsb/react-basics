@@ -29,20 +29,21 @@ import './App.css';
 
   const App = () => {
 
-    //const [counter, setCounter] = useState(0);
-    const counterArr = useState(0);
+    const [counter, setCounter] = useState(0);
+    const [title, setTitle] = useState("My Counter Application")
+    // const counterArr = useState(0);
 
-    const increment = (num) => {
-      //setCounter(counter + num)
-      counterArr[1](counterArr[0] + num);
+    const increment = num => () => {
+      setCounter(counter + num)
+      // counterArr[1](counterArr[0] + num);
     }
 
     return (
       <div className="container">
-        {/* <h1>Counter Application: {counter}</h1> */}
-        <h1>Counter Application: {counterArr[0]}</h1>
-        <button className="btn btn-primary" onClick={() => increment(1)}>Increment</button>
-        <button className="btn btn-warning" onClick={() => increment(-1)}>Decrement</button>
+        <h1>{title}: {counter}</h1>
+        {/* <h1>Counter Application: {counterArr[0]}</h1> */}
+        <button className="btn btn-primary" onClick={increment(1)}>Increment</button>
+        <button className="btn btn-warning" onClick={increment(-1)}>Decrement</button>
       </div>
     )
   }
