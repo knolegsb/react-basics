@@ -27,7 +27,7 @@ import './App.css';
 
   // render() {
 
-  const App = () => {
+  const App = (props) => {
 
     const [counter, setCounter] = useState(0);
     const [title, setTitle] = useState("My Counter Application")
@@ -40,7 +40,8 @@ import './App.css';
 
     return (
       <div className="container">
-        <h1>{title}: {counter}</h1>
+        <h1>{props.appTitle}: {counter}</h1>
+        <p>{props.appNumber}</p>
         {/* <h1>Counter Application: {counterArr[0]}</h1> */}
         <button className="btn btn-primary" onClick={increment(1)}>Increment</button>
         <button className="btn btn-warning" onClick={increment(-1)}>Decrement</button>

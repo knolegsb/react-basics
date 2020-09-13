@@ -5,10 +5,12 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 
+const appTitle = 'My Perfect App!';
+const appNumber = 10;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App appTitle={appTitle} appNumber={appNumber} />
   </React.StrictMode>,
   document.getElementById('root')
 );
