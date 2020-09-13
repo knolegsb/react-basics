@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 //import logo from './logo.svg';
 import './App.css';
-
+import AppView from './AppView';
 // function App() {
 //   return (
 //     <div className="App">
@@ -30,7 +30,7 @@ import './App.css';
   const App = (props) => {
 
     const [counter, setCounter] = useState(0);
-    const [title, setTitle] = useState("My Counter Application")
+    // const [title, setTitle] = useState("My Counter Application")
     // const counterArr = useState(0);
 
     const increment = num => () => {
@@ -38,10 +38,16 @@ import './App.css';
       // counterArr[1](counterArr[0] + num);
     }
 
+    const testFunction = () => {
+      alert('executed funtion!')
+    }
+
     return (
       <div className="container">
         <h1>{props.appTitle}: {counter}</h1>
         <p>{props.appNumber}</p>
+
+        <AppView title={props.appTitle} magicalNum={props.appNum} counter={counter} testFunction={testFunction}  />
         {/* <h1>Counter Application: {counterArr[0]}</h1> */}
         <button className="btn btn-primary" onClick={increment(1)}>Increment</button>
         <button className="btn btn-warning" onClick={increment(-1)}>Decrement</button>
